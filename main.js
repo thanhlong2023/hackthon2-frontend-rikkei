@@ -286,8 +286,13 @@ function deleteJob(id) {
 // }
 // document.getElementById('searchInput').addEventListener('input', searchJob);
 function searchJob(event) {
-    if (event.key === 'Enter') {
-        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+
+    // Nếu ô tìm kiếm trống, hiển thị lại tất cả công việc
+    if (searchInput === '') {
+        renderListJobs(listJobs);
+    } else if (event.key === 'Enter') {
+        // Tìm kiếm khi nhấn Enter
         const filteredJobs = listJobs.filter(job => job.nameJob.toLowerCase().includes(searchInput));
         renderListJobs(filteredJobs);
     }
