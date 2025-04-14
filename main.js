@@ -167,6 +167,14 @@ function editJob(id) {
     document.getElementById('btnAdd').style.display = 'none';
     document.getElementById('btnUpdate').style.display = 'block';
 
+    //validate input
+    const nameJob = document.getElementById('nameJob');
+    const deadLine = document.getElementById('deadLine');
+    const personInCharge = document.getElementById('personInCharge');
+    const status = document.getElementById('status');
+
+
+
     // Gắn idUpdateCurrent toàn cục
     idUpdateCurrent = id;
 
@@ -174,10 +182,17 @@ function editJob(id) {
     const jobToEdit = listJobs.find(job => job.id === id);
 
     if (jobToEdit) {
+        //fill dữ liệu vào input
         document.getElementById('nameJob').value = jobToEdit.nameJob;
         document.getElementById('deadLine').value = jobToEdit.deadLine;
         document.getElementById('personInCharge').value = jobToEdit.personInCharge;
         document.getElementById('status').value = jobToEdit.status;
+
+        //input có value thì ẩn span error bằng none
+        nameJob.value !== '' ? document.querySelector('.errorName').style.display = 'none' : document.querySelector('.errorName').style.display = 'block';
+        deadLine.value !== '' ? document.querySelector('.errorDate').style.display = 'none' : document.querySelector('.errorDate').style.display = 'block';
+        personInCharge.value !== '' ? document.querySelector('.errorPerson').style.display = 'none' : document.querySelector('.errorPerson').style.display = 'block';
+        status.value !== '' ? document.querySelector('.errorStatus').style.display = 'none' : document.querySelector('.errorStatus').style.display = 'block';
         checkInput();
     }
 }
