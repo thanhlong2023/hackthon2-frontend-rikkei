@@ -279,9 +279,18 @@ function deleteJob(id) {
     }
 }
 //search job
-function searchJob() {
-    const searchInput = document.getElementById('searchInput').value.toLowerCase();
-    const filteredJobs = listJobs.filter(job => job.nameJob.toLowerCase().includes(searchInput));
-    renderListJobs(filteredJobs);
+// function searchJob() {
+//     const searchInput = document.getElementById('searchInput').value.toLowerCase();
+//     const filteredJobs = listJobs.filter(job => job.nameJob.toLowerCase().includes(searchInput));
+//     renderListJobs(filteredJobs);
+// }
+// document.getElementById('searchInput').addEventListener('input', searchJob);
+function searchJob(event) {
+    if (event.key === 'Enter') {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+        const filteredJobs = listJobs.filter(job => job.nameJob.toLowerCase().includes(searchInput));
+        renderListJobs(filteredJobs);
+    }
 }
-document.getElementById('searchInput').addEventListener('input', searchJob);
+
+document.getElementById('searchInput').addEventListener('keydown', searchJob);
