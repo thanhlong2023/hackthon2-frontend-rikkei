@@ -29,7 +29,7 @@ function renderListJobs(jobs = listJobs) {
         <td>${jobs[i].personInCharge}</td>
         <td>${jobs[i].status}</td>
         <td>
-          <button type="button" class="btn btn-primary" onclick="editJob(${jobs[i].id})">Sửa</button>
+          <button type="button" class="btn btn-success" onclick="editJob(${jobs[i].id})">Sửa</button>
           <button type="button" class="btn btn-danger" onclick="deleteJob(${jobs[i].id})">Xóa</button>
         </td>
       </tr>`;
@@ -94,12 +94,14 @@ function addJob(e) {
             status: status.value
         };
         listJobs.push(newJob);
+
+        document.getElementById('nameJob').value = '';
+        document.getElementById('deadLine').value = '';
+        document.getElementById('personInCharge').value = '';
+        document.getElementById('status').value = '';
+        renderListJobs();
     }
-    document.getElementById('nameJob').value = '';
-    document.getElementById('deadLine').value = '';
-    document.getElementById('personInCharge').value = '';
-    document.getElementById('status').value = '';
-    renderListJobs();
+
 }
 document.getElementById('btnAdd').addEventListener('click', addJob);
 
