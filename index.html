@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container"><h1>Hệ Thống Quản Lý Công Việc</h1></div>
+    </header>
+    <main>
+      <div class="container">
+        <form>
+          <h2>Thêm/Cập nhật công việc</h2>
+          <div class="row">
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="nameJob" class="form-label">Tên công việc</label>
+                <input type="text" class="form-control" id="nameJob" />
+                <span class="errorName">Không được để trống</span>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="deadLine" class="form-label">Hạn chót</label>
+                <input type="date" class="form-control" id="deadLine" />
+                <span class="errorDate">Phải chọn ngày</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="personInCharge" class="form-label"
+                  >Người phụ trách</label
+                >
+                <input type="text" class="form-control" id="personInCharge" />
+                <span class="errorPerson">Không được để trống</span>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="status" class="form-label">Trạng thái</label>
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  id="status"
+                >
+                  <option value="" disabled selected>
+                    -- Chọn trạng thái --
+                  </option>
+                  <option value="Đang tiến hành">Đang tiến hành</option>
+                  <option value="Chưa hoàn thành">Chưa hoàn thành</option>
+                  <option value="Đã hoàn thành">Đã hoàn thành</option>
+                </select>
+
+                <span class="errorStatus">Vui lòng chọn trạng thái</span>
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            id="btnAdd"
+            style="display: block"
+          >
+            Thêm công việc
+          </button>
+          <button
+            type="submit"
+            class="btn btn-success"
+            id="btnUpdate"
+            style="display: none"
+            onclick="updateJob(event)"
+          >
+            Cập nhật công việc
+          </button>
+        </form>
+        <div class="search">
+          <input
+            id="searchInput"
+            type="text"
+            class="form-control"
+            placeholder="Tìm kiếm theo tên công việc..."
+          />
+        </div>
+        <table class="table table-bordered border-light">
+          <thead>
+            <tr>
+              <th scope="col">Công việc</th>
+              <th scope="col">Hạn chót</th>
+              <th scope="col">Phụ trách</th>
+              <th scope="col">Trạng thái</th>
+              <th scope="col">Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr>
+              <td>Lau nhà</td>
+              <td>2025-04-24</td>
+              <td>Mr luận</td>
+              <td>Đang tiến hành</td>
+              <td>
+                <button type="button" class="btn btn-primary">Sửa</button>
+                <button type="button" class="btn btn-danger">Xóa</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="height: 1px"></div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

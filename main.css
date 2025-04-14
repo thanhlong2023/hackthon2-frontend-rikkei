@@ -1,0 +1,76 @@
+header {
+    text-align: center;
+    height: 120px;
+    background-color: #6c5ce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #bebec1;
+    font-family: "Inter", sans-serif;
+}
+
+main {
+    max-width: 1060px;
+    height: auto;
+
+    border-radius: 12px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    box-shadow: 0px 4px 12px 0px #0000001A;
+
+}
+
+.search {
+    margin-top: 40.5px;
+}
+
+table {
+    text-align: center;
+    border: 1px solid white;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+table thead tr {
+    background-color: #6c5ce7;
+    color: white;
+}
+
+.container {
+    padding: 0 30px;
+}
+
+.errorPerson,
+.errorName,
+.errorDate,
+.errorStatus {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+main form h2 {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 23.25px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: #6c5ce7;
+    padding-top: 50px;
+}
